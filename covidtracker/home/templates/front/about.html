@@ -1,0 +1,73 @@
+{% extends 'front/master.html' %}
+
+{% block mainblock %}
+
+
+{% load static %}
+
+<body>
+
+	<!-- ***** Preloader Start ***** -->
+	<div id="preloader">
+		<div class="jumper">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+	<!-- ***** Preloader End ***** -->
+
+
+	<!-- ***** Header Area Start ***** -->
+	<header class="header-area header-sticky">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- ***** Header Area End ***** -->
+
+
+	<!-- ***** Welcome Area Start ***** -->
+	<div class="welcome-area" id="welcome">
+
+		<!-- ***** Header Text Start ***** -->
+		<div class="header-text">
+			<div class="container">
+				<div class="row">
+					<div class="left-text col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+						<h1>Pilot Project</h1>
+						<p>SE lab 2</p>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+						<img src="{% static 'front/about/images/slider-icon.png' %}" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ***** Header Text End ***** -->
+	</div>
+
+
+	<!-- jQuery -->
+	<script src="{% static 'front/about/js/jquery-2.1.0.min.js' %}"></script>
+
+	<!-- Bootstrap -->
+	<script src="{% static 'front/about/js/popper.js' %}"></script>
+	<script src="{% static 'front/about/js/bootstrap.min.js' %}"></script>
+
+	<!-- Plugins -->
+	<script src="{% static 'front/about/js/owl-carousel.js' %}"></script>
+	<script src="{% static 'front/about/js/scrollreveal.min.js' %}"></script>
+	<script src="{% static 'front/about/js/waypoints.min.js' %}"></script>
+	<script src="{% static 'front/about/js/jquery.counterup.min.js' %}"></script>
+	<script src="{% static 'front/about/js/imgfix.min.js' %}"></script>
+
+	<!-- Global Init -->
+	<script src="{% static 'front/about/js/custom.js' %}"></script>
+
+</body>
+{% endblock %}
