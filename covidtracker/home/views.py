@@ -10,7 +10,7 @@ def home(request):
 	link = link.json()
 
 	last_updated = link['updated']
-
+	by_division = Home.objects.latest('date')
 	#print(link)
-	args = {'sitename':sitename,'data':link}
+	args = {'sitename':sitename,'data':link,'by_division':by_division}
 	return render(request,'front/home.html',args)

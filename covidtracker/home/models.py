@@ -15,6 +15,6 @@ class Home(models.Model):
 	confirmedin_barishal = models.IntegerField(null=True)
 	confirmedin_rangpur = models.IntegerField(null=True)
 	confirmedin_mymensingh = models.IntegerField(null=True)
-
+	entry_name = models.CharField(max_length=100,null=True)
 	def __str__(self):
-		return self.date + 'home'
+		return self.entry_name
