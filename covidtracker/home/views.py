@@ -8,21 +8,28 @@ import re
 
 def home(request):
 	sitename = 'COVID-19 Tracker'
-	link = requests.get('https://disease.sh/v2/countries/BD')
-	link = link.json()
 
 	by_division = Home.objects.latest('date')
 
-	url = 'https://iedcr.gov.bd/'
+	url = 'https://www.worldometers.info/coronavirus/'
 	response = requests.get(url)
 
-	info= re.findall(r'<h3>(\d+)</h3>',response.text)
+	#info= re.findall(r'>(\d+)</td>',response.text)
+	full=response.text
+	start=(full.find('bangladesh'))
+	data=''
+	for i in range(start,start+900):
+		data += full[i]
 
-	x = info[0]
-	infos= re.findall(r'<td>(\d+)</td>',response.text)
-	y = infos[8]
+	info = re.findall(r'>([^;]*)</td>',data)
+	print(info[7])
+	totalCases = info[1]
+	newCases = info[2]
+	totalDeaths = info[3]
+	newDeaths = info[4]
+	activeCases = info[7]
+	testPerMil=info[9]
 
 
-
-	args = {'sitename':sitename,'data':link,'by_division':by_division,'x':x,'y':y}
+	args = {'sitename':sitename,'by_division':by_division,'totalCases':totalCases,'newCases':newCases,'totalDeaths':totalDeaths,'newDeaths':newDeaths,'activeCases':activeCases,'testPerMil':testPerMil}
 	return render(request,'front/home.html',args)
